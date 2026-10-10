@@ -21,13 +21,9 @@ A responsive single-page portfolio showcasing professional experience, technical
 
 ## Viewing
 
-Open `index.html` directly in a browser, or serve it locally:
+Live site: https://tarunkumarpardeshi.github.io/MyPortfolio/ (deployed via GitHub Pages)
 
-```bash
-cd MyPortfolio
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
+You can also open `index.html` directly in a browser.
 
 ## Sections
 
