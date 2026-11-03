@@ -1,10 +1,10 @@
 # MyPortfolio
 
-Personal portfolio website of **Tarun Kumar Pardeshi** — Cloud & DevOps Engineer based in Canada.
+Personal portfolio website of **Tarun Kumar Pardeshi** — AI Engineer, Generative AI (GenAI) Architect & Agentic AI Specialist based in Canada.
 
 ## About
 
-A responsive single-page portfolio showcasing professional experience, technical skills, verified certifications, 12 production-grade engineering projects, and contact information. Built with a modern, interactive design including an animated retro splash screen, dynamic category filtering, and direct links to verified GitHub repositories.
+A responsive single-page portfolio showcasing professional experience, technical skills, verified certifications, 12 production-grade AI & platform engineering projects, and contact information. Built with a modern, interactive design including an animated retro splash screen, dynamic category filtering, and direct links to verified GitHub repositories.
 
 ## Tech Stack
 
@@ -28,17 +28,16 @@ You can also open `index.html` directly in any modern browser.
 
 ## Sections
 
-- **Hero / About** — Headline, executive metrics (95%+ FCR, 35% MTTR reduction, 22% cost savings), and call-to-action
+- **Hero / About** — Headline, executive AI performance metrics (40% token cost reduction, 100% prompt injection safety, 35% autonomous MTTR reduction), and call-to-action
 - **Education** — Postgraduate Certificates in IT Network Security & Wireless Networks, B.E. in Electronics & Telecom
 - **Experience** — Concentrix (Canada) and Drive-Sec Technologies
-- **Technical Skills** — Cloud, Kubernetes, Terraform IaC, DevSecOps, Observability, and Networking
-- **Featured Projects (12)** — Categorized with interactive filters:
-  - *Cloud & High Availability*: Multi-Region Disaster Recovery Mesh, AWS Landing Zone, Support Triage Automation, Cloud Cost Guardian
-  - *GitOps & Kubernetes*: Canary Progressive Delivery Mesh, AWS EKS GitOps Platform, Kubernetes Observability Stack
-  - *DevSecOps & Governance*: Zero-Trust Supply Chain Security, Cloud Drift Sentinel Self-Healing, AWS Landing Zone
-  - *GenAI & Streaming*: Enterprise GenAI Bedrock Gateway, Real-Time Kafka Streaming, Agentic Incident Responder
-- **Writing** — Infrastructure lessons published on Medium
-- **Professional Achievements & Verified Credentials** — Verified badges linking to Credly and CertMetrics for AWS Solutions Architect, AWS AI Practitioner, AWS Cloud Practitioner, and Cisco Cybersecurity
+- **Technical Skills** — GenAI & Foundation Models, Agentic AI & MCP, Vector Stores & Semantic Caching, AI Safety & FinOps, AI Platform Infrastructure
+- **Featured AI Projects (12)** — Categorized with interactive filters:
+  - *GenAI & Agentic Systems*: Enterprise GenAI Bedrock Gateway, Agentic Incident Responder (MCP), Real-Time Kafka Streaming for AI Inference, Support Triage Automation
+  - *AI Safety & Governance*: Zero-Trust Model Supply Chain Security, Cloud Drift Sentinel Self-Healing, Cloud Cost Guardian & Token FinOps
+  - *AI Platform & Serving*: Multi-Region Disaster Recovery Mesh for AI, Canary Model Delivery Mesh, AWS Enterprise Landing Zone for AI Labs, AWS EKS Platform for AI Model Serving, K8s Observability & Telemetry
+- **Writing** — Engineering and automation lessons published on Medium
+- **Professional Achievements & Verified Credentials** — Verified badges linking to Credly and CertMetrics for AWS Certified AI Practitioner, AWS Solutions Architect, AWS Cloud Practitioner, and Cisco Cybersecurity
 - **Contact** — Direct email, LinkedIn, GitHub, and message form
 
 ## Author
