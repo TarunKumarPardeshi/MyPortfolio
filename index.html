@@ -534,48 +534,369 @@
         <!-- PROJECTS SECTION -->
         <section id="projects" class="py-24 bg-accent">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16"><h2 class="text-4xl font-extrabold text-darkText mt-2 border-b-4 border-primary inline-block pb-2">Key Projects</h2>
-                <p class="text-mutedText font-medium mt-4 max-w-2xl mx-auto">Production-style builds and open-source tooling — all on <a href="https://github.com/TarunKumarPardeshi" target="_blank" class="text-primary font-bold hover:underline">GitHub</a>.</p></div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">Support Triage Automation</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">Open-source ticket triage pipeline: Elasticsearch ingestion, auto-categorization and prioritization, runbook attachment, and CloudWatch alert enrichment. Python, AWS Lambda, EventBridge, Terraform.</p>
-                        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">Python</span><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">Elasticsearch</span><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">Lambda</span><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">Terraform</span></div>
-                        <a href="https://github.com/TarunKumarPardeshi/support-triage-automation" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primaryDark"><i class="fab fa-github"></i> View on GitHub</a>
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-darkText mt-2 border-b-4 border-primary inline-block pb-2">Featured Projects</h2>
+                    <p class="text-mutedText font-medium mt-4 max-w-2xl mx-auto">
+                        Production-grade cloud platforms, GitOps meshes, zero-trust security pipelines, and autonomous systems — all open-source on <a href="https://github.com/TarunKumarPardeshi" target="_blank" class="text-primary font-bold hover:underline">GitHub</a>.
+                    </p>
+                </div>
+
+                <!-- Project Category Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button class="project-filter-btn active px-5 py-2.5 rounded-xl font-bold text-sm bg-primary text-white shadow-md transition-all cursor-pointer" data-filter="all">All Projects (12)</button>
+                    <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="cloud-ha">Cloud &amp; High Availability</button>
+                    <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="gitops">GitOps &amp; Kubernetes</button>
+                    <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="security">DevSecOps &amp; Governance</button>
+                    <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="ai-data">GenAI &amp; Streaming</button>
+                </div>
+
+                <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+                    <!-- Project 1: Multi-Region DR Mesh -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="cloud-ha">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-primaryDark bg-cyan-50 px-2.5 py-1 rounded-md border border-cyan-100">High Availability</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Multi-Region Disaster Recovery Mesh</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-bolt text-emerald-500"></i> RTO &lt; 5s · RPO = 0 Data Loss
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Automated dual-region active-active failover across AWS <code class="text-xs bg-gray-100 px-1 py-0.5 rounded">ca-central-1</code> and <code class="text-xs bg-gray-100 px-1 py-0.5 rounded">us-east-1</code> with 5-region consensus quorum. Employs Route 53 Application Recovery Controller (ARC), DynamoDB Global Tables, and Chaos Engineering drills.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Route 53 ARC</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">DynamoDB Global</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Terraform</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Chaos Mesh</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/multi-region-disaster-recovery-mesh" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">Agentic AI Context Engineering Pipeline</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">Built an agentic AI pipeline leveraging LLM-based context engineering and MCP server orchestration to automate multi-step enterprise workflows, cutting manual resolution time for recurring incidents by 35%.</p>
-                        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">Python</span><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">LLM</span><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">AWS Lambda</span><span class="text-xs bg-cyan-50 text-primaryDark px-2 py-1 rounded border border-cyan-100 font-bold">MCP</span></div>
-                        <a href="https://github.com/TarunKumarPardeshi/agentic-incident-responder" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primaryDark"><i class="fab fa-github"></i> View on GitHub</a>
+
+                    <!-- Project 2: Canary Progressive Delivery Mesh -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="gitops">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-100">Kubernetes &amp; GitOps</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Canary &amp; Progressive Delivery Mesh</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-purple-700 bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-rotate-left text-purple-500"></i> Automated Zero-Downtime Rollback
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Production progressive delivery pipeline on Kubernetes using Argo Rollouts and Istio Envoy service mesh for Layer-7 traffic shifting. Queries Prometheus real-time 5xx error budgets and p99 latency to trigger instant automated rollbacks on regressions.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Argo Rollouts</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Istio Mesh</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Kubernetes</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Prometheus</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/canary-progressive-delivery-mesh" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">AWS EKS GitOps Platform</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">Production-grade EKS platform on AWS with Terraform and ArgoCD GitOps — declarative infrastructure, automated syncs, and UAT/Prod promotion workflows.</p>
-                        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded border border-orange-100 font-bold">EKS</span><span class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded border border-orange-100 font-bold">Terraform</span><span class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded border border-orange-100 font-bold">ArgoCD</span></div>
-                        <a href="https://github.com/TarunKumarPardeshi/aws-eks-gitops-platform" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primaryDark"><i class="fab fa-github"></i> View on GitHub</a>
+
+                    <!-- Project 3: AWS Enterprise Landing Zone -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="cloud-ha security">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-orange-700 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-100">Enterprise Cloud</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">AWS Enterprise Multi-Account Landing Zone</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-orange-700 bg-orange-50 border border-orange-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-key text-orange-500"></i> Keyless GitHub Actions OIDC
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Well-Architected modular AWS Landing Zone using Terraform. Establishes dedicated Organizational Units (Core, Workloads, Sandbox), strict preventative Service Control Policies (SCPs), sovereign region locks, and zero static credentials via GitHub Actions OIDC.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS Organizations</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Terraform</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">SCPs</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">OIDC</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/aws-enterprise-landing-zone" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">Cloud Cost Guardian</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">FinOps cost-anomaly detector — Lambda function analyzing Cost Explorer data against rolling baselines, with Slack Block Kit alerts and SNS fallback. Fully tested, Terraform-deployed.</p>
-                        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100 font-bold">FinOps</span><span class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100 font-bold">Lambda</span><span class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100 font-bold">Terraform</span></div>
-                        <a href="https://github.com/TarunKumarPardeshi/cloud-cost-guardian" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primaryDark"><i class="fab fa-github"></i> View on GitHub</a>
+
+                    <!-- Project 4: Zero-Trust Supply Chain Security -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="security">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md border border-rose-100">DevSecOps &amp; Security</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Zero-Trust Software Supply Chain Security</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-rose-700 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-certificate text-rose-500"></i> Cosign Signed · Kyverno Enforced
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                End-to-end container security provenance pipeline. Enforces zero-tolerance vulnerability gates via Trivy (0 Criticals), generates cryptographically attested CycloneDX 1.5 SBOMs, signs containers via Sigstore Cosign, and enforces Kyverno admission controls.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Trivy</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">CycloneDX SBOM</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Sigstore Cosign</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Kyverno</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/zero-trust-supply-chain-security" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">K8s Observability Stack</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">One-command Kubernetes observability: Prometheus, Grafana, Loki, and Alertmanager with pre-built dashboards and alert rules for deployment health.</p>
-                        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs bg-red-50 text-red-700 px-2 py-1 rounded border border-red-100 font-bold">Prometheus</span><span class="text-xs bg-red-50 text-red-700 px-2 py-1 rounded border border-red-100 font-bold">Grafana</span><span class="text-xs bg-red-50 text-red-700 px-2 py-1 rounded border border-red-100 font-bold">Kubernetes</span></div>
-                        <a href="https://github.com/TarunKumarPardeshi/k8s-observability-stack" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primaryDark"><i class="fab fa-github"></i> View on GitHub</a>
+
+                    <!-- Project 5: Cloud Drift Sentinel & Self-Healing -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="cloud-ha security">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-100">Event-Driven SRE</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Cloud Drift Sentinel &amp; Self-Healing Engine</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-shield-virus text-amber-500"></i> Sub-2s Automated Remediation
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Real-time drift detection and self-healing engine. Intercepts out-of-band console changes (like unauthorized open <code class="text-xs bg-gray-100 px-1 py-0.5 rounded">0.0.0.0/0</code> security groups) via EventBridge &amp; CloudTrail, executing sub-2-second automated Lambda rollbacks and Slack incident alerts.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">EventBridge</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">CloudTrail</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS Lambda</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Slack Block Kit</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/cloud-drift-sentinel-self-healing" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">Cloud Monitoring & Observability Automation</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">Automated EC2 health checks and built a big-data observability framework using Python, CloudWatch, and SNS alerts; provisioned infrastructure with Terraform, improving issue detection speed by 35%.</p>
-                        <div class="flex flex-wrap gap-2"><span class="text-xs bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100 font-bold">Terraform</span><span class="text-xs bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100 font-bold">CloudWatch</span><span class="text-xs bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100 font-bold">Python</span></div>
+
+                    <!-- Project 6: Enterprise GenAI Gateway -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="ai-data">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-pink-700 bg-pink-50 px-2.5 py-1 rounded-md border border-pink-100">GenAI &amp; LLM Gateway</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Enterprise GenAI Gateway on AWS Bedrock</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-pink-700 bg-pink-50 border border-pink-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-brain text-pink-500"></i> 40% Cost Savings · OWASP LLM01
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                High-performance LLM proxy built with FastAPI and AWS Bedrock (Claude 3.5 Sonnet / Haiku). Incorporates OWASP LLM01 prompt injection detection, regex PII redaction, sub-5ms Redis semantic caching, and per-tenant FinOps token attribution.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS Bedrock</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Claude 3.5</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">FastAPI</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Redis Caching</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/genai-bedrock-enterprise-gateway" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="clean-card p-8 rounded-xl bg-white hover:border-primary transition-all">
-                        <h3 class="text-xl font-extrabold text-darkText mb-3">Cloud Cost Optimization Dashboard</h3>
-                        <p class="text-mutedText text-sm font-medium mb-6 leading-relaxed">Built an automated FinOps analytics pipeline with AWS Lambda and QuickSight analyzing usage patterns and rightsizing recommendations, cutting monthly cloud spend by 22%.</p>
-                        <div class="flex flex-wrap gap-2"><span class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded border border-purple-100 font-bold">FinOps</span><span class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded border border-purple-100 font-bold">QuickSight</span><span class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded border border-purple-100 font-bold">Lambda</span></div>
+
+                    <!-- Project 7: Real-Time Event Streaming Platform -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="ai-data">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-100">Event-Driven Streaming</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Featured</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Real-Time Event Streaming Platform</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-network-wired text-indigo-500"></i> Zero Data Loss DLQ Diversion
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Resilient event streaming architecture using Apache Kafka (KRaft mode) &amp; AWS MSK. Features asynchronous Python consumers, strict Pydantic V2 schema validation, exponential retry backoff, Dead-Letter Queue (DLQ) diversion to DynamoDB, and Prometheus monitoring.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Apache Kafka</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS MSK</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Python AsyncIO</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">DynamoDB</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/realtime-event-streaming-platform" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: Agentic Incident Responder -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="ai-data gitops">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-md border border-cyan-100">Agentic AI &amp; SRE</span>
+                                <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">Core</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Agentic Incident Responder</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-cyan-700 bg-cyan-50 border border-cyan-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-robot text-cyan-500"></i> Autonomous RCA + Human Approval Gate
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Autonomous SRE incident triage system uniting LLM reasoning with Model Context Protocol (MCP) server tools. Investigates live Kubernetes pods, logs, and CloudWatch alerts during outages, generates structured RCAs, and enforces Human-in-the-Loop approval for rollbacks.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Python</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">MCP Protocol</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Kubernetes</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">CloudWatch</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/agentic-incident-responder" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: AWS EKS GitOps Platform -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="gitops cloud-ha">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">Kubernetes &amp; GitOps</span>
+                                <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">Core</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">AWS EKS Production GitOps Platform</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-blue-700 bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-cubes text-blue-500"></i> Multi-AZ · KMS Envelope Encryption
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Production-grade Amazon EKS platform provisioned across 3 Availability Zones using modular Terraform. Fully managed via ArgoCD GitOps declarative reconciliation, App-of-Apps architectural patterns, AWS KMS envelope encryption, and IAM Roles for Service Accounts (IRSA).
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Amazon EKS</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Terraform</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">ArgoCD</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS KMS</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/aws-eks-gitops-platform" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 10: Support Triage Automation -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="cloud-ha">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">SRE Automation</span>
+                                <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">Core</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Support &amp; Incident Triage Automation</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-clock text-emerald-500"></i> 35% MTTR Incident Reduction
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Big-data ticket and incident triage pipeline: Elasticsearch ingestion, auto-categorization and severity scoring, automated runbook attachment, and CloudWatch alert enrichment. Powers automated self-healing workflows for enterprise IT operations.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Python</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Elasticsearch</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS Lambda</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">CloudWatch</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/support-triage-automation" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 11: Cloud Cost Guardian -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="cloud-ha security">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-green-700 bg-green-50 px-2.5 py-1 rounded-md border border-green-100">FinOps &amp; Cost Governance</span>
+                                <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">Core</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Cloud Cost Guardian</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-green-700 bg-green-50 border border-green-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-coins text-green-500"></i> 22% Cloud Spend Optimization
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Automated FinOps cost-anomaly detector. Lambda function analyzing Cost Explorer data against rolling statistical baselines, with Slack Block Kit alerts and SNS fallback. Fully tested with pytest and deployed using Terraform.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">FinOps</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Cost Explorer</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">AWS Lambda</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Slack Alerts</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/cloud-cost-guardian" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 12: Kubernetes Observability Stack -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="gitops">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-red-700 bg-red-50 px-2.5 py-1 rounded-md border border-red-100">Observability &amp; Telemetry</span>
+                                <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">Core</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">K8s Observability &amp; Monitoring Stack</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-red-700 bg-red-50 border border-red-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-chart-line text-red-500"></i> Full L1–L4 Telemetry Stack
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Turnkey Kubernetes observability platform: Prometheus for metric collection, Grafana for visualization, Grafana Loki for container log streaming, and Alertmanager with pre-packaged golden-signals dashboards.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Prometheus</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Grafana</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Loki</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Kubernetes</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/k8s-observability-stack" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -633,11 +954,32 @@
                 </div>
                 
                  <!-- CERTIFICATIONS -->
-                 <div class="flex flex-wrap justify-center gap-6 mt-16">
-                     <a href="#" class="clean-card px-8 py-4 rounded-full flex items-center gap-3 hover:bg-white transition-colors bg-white font-bold text-darkText border border-gray-200"><i class="fab fa-aws text-[#FF9900] text-xl"></i> AWS Solutions Architect</a>
-                     <a href="#" class="clean-card px-8 py-4 rounded-full flex items-center gap-3 hover:bg-white transition-colors bg-white font-bold text-darkText border border-gray-200"><i class="fab fa-aws text-[#FF9900] text-xl"></i> AWS Cloud Practitioner</a>
-                     <a href="#" class="clean-card px-8 py-4 rounded-full flex items-center gap-3 hover:bg-white transition-colors bg-white font-bold text-darkText border border-gray-200"><i class="fas fa-brain text-pink-500 text-xl"></i> AWS AI Practitioner</a>
-                     <a href="#" class="clean-card px-8 py-4 rounded-full flex items-center gap-3 hover:bg-white transition-colors bg-white font-bold text-darkText border border-gray-200"><i class="fas fa-certificate text-blue-600 text-xl"></i> Cisco CCNA</a>
+                 <div class="flex flex-wrap justify-center gap-4 mt-16 max-w-5xl mx-auto">
+                     <a href="https://www.credly.com/badges/be00bad1-6f89-4a27-81c1-410281bf5d4f" target="_blank" class="clean-card px-6 py-3.5 rounded-full flex items-center gap-3 bg-white font-bold text-darkText border border-gray-200 hover:border-primary transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                         <i class="fab fa-aws text-[#FF9900] text-xl"></i>
+                         <span>AWS Solutions Architect – Associate</span>
+                         <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold border border-emerald-200">Verified</span>
+                     </a>
+                     <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/10b6b78a7a9240f8bc11902ea279b11b" target="_blank" class="clean-card px-6 py-3.5 rounded-full flex items-center gap-3 bg-white font-bold text-darkText border border-gray-200 hover:border-primary transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                         <i class="fas fa-brain text-pink-500 text-xl"></i>
+                         <span>AWS AI Practitioner</span>
+                         <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold border border-emerald-200">Verified</span>
+                     </a>
+                     <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/f7973db21b4b4a7baf46f28ff7ee60cd" target="_blank" class="clean-card px-6 py-3.5 rounded-full flex items-center gap-3 bg-white font-bold text-darkText border border-gray-200 hover:border-primary transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                         <i class="fab fa-aws text-[#FF9900] text-xl"></i>
+                         <span>AWS Cloud Practitioner</span>
+                         <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold border border-emerald-200">Verified</span>
+                     </a>
+                     <a href="https://www.credly.com/badges/f957b6ef-f479-42cb-bb91-96c8713e82e2" target="_blank" class="clean-card px-6 py-3.5 rounded-full flex items-center gap-3 bg-white font-bold text-darkText border border-gray-200 hover:border-primary transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                         <i class="fas fa-shield-halved text-cyan-600 text-xl"></i>
+                         <span>Cisco Junior Cybersecurity Analyst</span>
+                         <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold border border-emerald-200">Verified</span>
+                     </a>
+                     <a href="https://www.credly.com/badges/53938c77-5560-4b91-b656-1160f9916d7d" target="_blank" class="clean-card px-6 py-3.5 rounded-full flex items-center gap-3 bg-white font-bold text-darkText border border-gray-200 hover:border-primary transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                         <i class="fas fa-network-wired text-blue-600 text-xl"></i>
+                         <span>Cisco Introduction to Cybersecurity</span>
+                         <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold border border-emerald-200">Verified</span>
+                     </a>
                  </div>
                  
                  <!-- Resume Download -->
@@ -738,6 +1080,31 @@
                 const scrolled = (scrollTop / scrollHeight) * 100;
                 bar.style.width = scrolled + "%";
             }
+        });
+    
+        // Project Filtering Logic
+        const filterBtns = document.querySelectorAll('.project-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white', 'shadow-md');
+                    b.classList.add('bg-white', 'text-darkText', 'border', 'border-gray-200');
+                });
+                btn.classList.add('active', 'bg-primary', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-white', 'text-darkText', 'border', 'border-gray-200');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    const categories = (card.getAttribute('data-category') || '').split(' ');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 </body>
