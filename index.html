@@ -552,13 +552,70 @@
 
                 <!-- AI Project Category Filter Tabs -->
                 <div class="flex flex-wrap justify-center gap-2 mb-12">
-                    <button class="project-filter-btn active px-5 py-2.5 rounded-xl font-bold text-sm bg-primary text-white shadow-md transition-all cursor-pointer" data-filter="all">All AI Projects (12)</button>
+                    <button class="project-filter-btn active px-5 py-2.5 rounded-xl font-bold text-sm bg-primary text-white shadow-md transition-all cursor-pointer" data-filter="all">All AI Projects (14)</button>
                     <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="ai-core">GenAI &amp; Agentic Systems</button>
                     <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="ai-safety">AI Safety &amp; Governance</button>
                     <button class="project-filter-btn px-5 py-2.5 rounded-xl font-bold text-sm bg-white text-darkText border border-gray-200 hover:border-primary hover:text-primary transition-all shadow-sm cursor-pointer" data-filter="ai-infra">AI Platform &amp; Serving</button>
                 </div>
 
                 <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+                    <!-- Project 1: Enterprise Hybrid GraphRAG -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="ai-core">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-100">GraphRAG &amp; Multi-Hop</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Flagship</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Enterprise Hybrid GraphRAG &amp; Reasoning Engine</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-purple-700 bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-project-diagram text-purple-500"></i> 94.6% Faithfulness · -84% Hallucinations
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Enterprise GraphRAG architecture fusing Neo4j knowledge graph subgraphs with PostgreSQL pgvector dense embeddings. Utilizes Reciprocal Rank Fusion (RRF), cross-encoder neural reranking, and an automated Ragas evaluation suite for multi-hop regulatory reasoning.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Neo4j (Cypher)</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">PostgreSQL pgvector</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Claude 3.5 Sonnet</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Ragas Evaluation</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/hybrid-graphrag-knowledge-engine" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Autonomous Multi-Agent Vulnerability Patcher -->
+                    <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="ai-core ai-safety">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">Multi-Agent Swarm &amp; AST</span>
+                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200"><i class="fas fa-star mr-1 text-amber-500"></i> Flagship</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-darkText mb-2">Autonomous Multi-Agent Vulnerability Patcher</h3>
+                            <div class="mb-4 inline-flex items-center gap-1.5 text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+                                <i class="fas fa-shield-halved text-emerald-500"></i> 85s MTTR · Docker Sandboxed Proofs
+                            </div>
+                            <p class="text-mutedText text-sm font-medium mb-5 leading-relaxed">
+                                Stateful LangGraph multi-agent swarm that autonomously ingests CVEs, analyzes Abstract Syntax Tree (AST) code sinks, writes reproducing regression tests, synthesizes minimal patches, verifies them in isolated Docker containers, and opens signed GitHub PRs.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">LangGraph (StateGraph)</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Claude 3.5 Sonnet</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Docker Sandboxing</span>
+                                <span class="text-xs bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md font-semibold text-mutedText">Python AST Analysis</span>
+                            </div>
+                            <a href="https://github.com/TarunKumarPardeshi/agentic-code-auditor-patcher" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-gray-50 hover:bg-primary text-darkText hover:text-white rounded-xl text-sm font-bold border border-gray-200 hover:border-primary transition-all group">
+                                <span><i class="fab fa-github mr-2"></i> View on GitHub</span>
+                                <i class="fas fa-arrow-up-right-from-square text-xs opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </div>
+                    </div>
                     <!-- Project 1: Enterprise GenAI Gateway -->
                     <div class="project-card clean-card p-7 rounded-2xl bg-white border border-gray-100 flex flex-col justify-between hover:border-primary transition-all" data-category="ai-core">
                         <div>
